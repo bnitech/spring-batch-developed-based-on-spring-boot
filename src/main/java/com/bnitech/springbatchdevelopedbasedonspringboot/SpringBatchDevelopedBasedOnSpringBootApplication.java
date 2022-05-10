@@ -1,0 +1,13 @@
+package com.bnitech.springbatchdevelopedbasedonspringboot;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringBatchDevelopedBasedOnSpringBootApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(SpringBatchDevelopedBasedOnSpringBootApplication.class, args);
+    }
+
+}
