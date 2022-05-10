@@ -1,4 +1,4 @@
-[] # Spring Boot 기반으로 개발하는 Spring Batch (Spring Batch developed based on Spring Boot)
+# Spring Boot 기반으로 개발하는 Spring Batch (Spring Batch developed based on Spring Boot)
 
 온라인 강좌: [스프링 배치 - Spring Boot 기반으로 개발하는 Spring Batch](https://inf.run/Lf6U)
 
