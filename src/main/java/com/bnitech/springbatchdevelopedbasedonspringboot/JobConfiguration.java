@@ -14,48 +14,45 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @RequiredArgsConstructor
-public class HelloJobConfigration {
+public class JobConfiguration {
 
   private final JobBuilderFactory jobBuilderFactory;
   private final StepBuilderFactory stepBuilderFactory;
 
   @Bean
-  public Job helloJob() {
-    return jobBuilderFactory.get("hellojob")
-        .start(helloStep1())
-        .next(helloStep2())
+  public Job job() {
+    return jobBuilderFactory.get("job")
+        .start(step1())
+        .next(step2())
+        .build();
+
+  }
+
+  @Bean
+  public Step step1() {
+    return stepBuilderFactory.get("step1")
+        .tasklet(new Tasklet() {
+          @Override
+          public RepeatStatus execute(StepContribution stepContribution, ChunkContext chunkContext)
+              throws Exception {
+            System.out.println("step1 was executed");
+            return RepeatStatus.FINISHED;
+          }
+        })
         .build();
   }
 
   @Bean
-  public Step helloStep1() {
-    return stepBuilderFactory.get("helloStep1")
+  public Step step2() {
+    return stepBuilderFactory.get("step2")
         .tasklet(new Tasklet() {
           @Override
           public RepeatStatus execute(StepContribution stepContribution, ChunkContext chunkContext)
               throws Exception {
-
-            System.out.println("==========================");
-            System.out.println(" >> Hello Spring Batch!!");
-            System.out.println("==========================");
+            System.out.println("step2 was executed");
             return RepeatStatus.FINISHED;
           }
-        }).build();
-  }
-
-  @Bean
-  public Step helloStep2() {
-    return stepBuilderFactory.get("helloStep2")
-        .tasklet(new Tasklet() {
-          @Override
-          public RepeatStatus execute(StepContribution stepContribution, ChunkContext chunkContext)
-              throws Exception {
-
-            System.out.println("==========================");
-            System.out.println(" >> step2 was executed");
-            System.out.println("==========================");
-            return RepeatStatus.FINISHED;
-          }
-        }).build();
+        })
+        .build();
   }
 }
