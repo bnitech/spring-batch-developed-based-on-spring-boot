@@ -19,12 +19,13 @@
 - 섹션 2. 스프링 배치 시작
   - [x] 목차 소개
   - [x] 프로젝트 구성 및 의존성 설정
-  - [ ] Hello Spring Batch 시작하기
-  - [ ] DB 스키마 생성 및 이해 (1)
-  - [ ] DB 스키마 생성 및 이해 (2)
+  - [x] Hello Spring Batch 시작하기
+  - [x] DB 스키마 생성 및 이해 (1)
+  - [x] DB 스키마 생성 및 이해 (2)
 - 섹션 3. 스프링 배치 도메인 이해
-  - [ ] 목차 소개
-  - [ ] JobInstance
+  - [x] 목차 소개
+  - [x] Job
+  - [x] JobInstance
   - [ ] JobParameter
   - [ ] JobExecution
   - [ ] Step
