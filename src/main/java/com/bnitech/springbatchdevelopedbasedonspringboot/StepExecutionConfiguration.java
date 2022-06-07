@@ -39,7 +39,7 @@ public class StepExecutionConfiguration {
     return stepBuilderFactory.get("step2")
         .tasklet((stepContribution, chunkContext) -> {
           System.out.println("step2 was executed");
-          return RepeatStatus.FINISHED;
+          throw new RuntimeException("step2 has failed");
         })
         .build();
   }
