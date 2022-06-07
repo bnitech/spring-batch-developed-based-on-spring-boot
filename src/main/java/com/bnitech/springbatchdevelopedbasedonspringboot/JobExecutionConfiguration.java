@@ -1,9 +1,7 @@
 package com.bnitech.springbatchdevelopedbasedonspringboot;
 
-import java.util.Map;
 import lombok.RequiredArgsConstructor;
 import org.springframework.batch.core.Job;
-import org.springframework.batch.core.JobParameters;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.StepContribution;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
@@ -16,13 +14,13 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @RequiredArgsConstructor
-public class JobInstanceConfiguration {
+public class JobExecutionConfiguration {
 
   private final JobBuilderFactory jobBuilderFactory;
   private final StepBuilderFactory stepBuilderFactory;
 
   @Bean
-  public Job job() {
+  public Job BatchJob() {
     return jobBuilderFactory.get("job")
         .start(step1())
         .next(step2())
@@ -37,19 +35,7 @@ public class JobInstanceConfiguration {
           @Override
           public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext)
               throws Exception {
-
-            JobParameters jobParameters = contribution.getStepExecution()
-                .getJobExecution().getJobParameters();
-
-            jobParameters.getString("name");
-            jobParameters.getLong("seq");
-            jobParameters.getDate("date");
-            jobParameters.getDouble("age");
-
-            final Map<String, Object> jobParameters1 = chunkContext.getStepContext()
-                .getJobParameters();
-
-            System.out.println("step1 was executed");
+            System.out.println("step1 has executed");
             return RepeatStatus.FINISHED;
           }
         })
