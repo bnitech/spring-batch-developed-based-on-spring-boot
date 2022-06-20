@@ -13,6 +13,16 @@ public class ExecutionContextTasklet3 implements Tasklet {
   public RepeatStatus execute(StepContribution stepContribution, ChunkContext chunkContext)
       throws Exception {
     System.out.println("step3 was executed");
+
+    final Object name = chunkContext.getStepContext().getStepExecution().getJobExecution()
+        .getExecutionContext().get("name");
+
+    if (name == null) {
+      chunkContext.getStepContext().getStepExecution().getJobExecution()
+          .getExecutionContext().put("name", "user1");
+      throw new RuntimeException("step2 was failed");
+    }
+
     return RepeatStatus.FINISHED;
   }
 }
