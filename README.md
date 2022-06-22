@@ -26,14 +26,14 @@
   - [x] 목차 소개
   - [x] Job
   - [x] JobInstance
-  - [ ] JobParameter
-  - [ ] JobExecution
-  - [ ] Step
-  - [ ] StepExecution
-  - [ ] StepContribution
-  - [ ] ExecutionContext
-  - [ ] JobRepository
-  - [ ] JobLauncher
+  - [x] JobParameter
+  - [x] JobExecution
+  - [x] Step
+  - [x] StepExecution
+  - [x] StepContribution
+  - [x] ExecutionContext
+  - [x] JobRepository
+  - [x] JobLauncher
 - 섹션 4. 스프링 배치 실행 - Job
   - [ ] 목차 소개
   - [ ] 배치 초기화 설정
