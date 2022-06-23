@@ -32,3 +32,8 @@ spring:
   batch:
     job:
       names: ${job.name:NONE}
+      enabled: true
+    jdbc:
+      initialize-schema: always
+      table-prefix: SYSTEM_
+
