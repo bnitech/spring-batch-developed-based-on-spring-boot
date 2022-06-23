@@ -30,7 +30,5 @@ spring:
       password: bnitech
       driver-class-name: com.mysql.jdbc.Driver
   batch:
-    jdbc:
-      initialize-schema: always
     job:
-      enabled: false
+      names: batchJob1
