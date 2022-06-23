@@ -31,4 +31,4 @@ spring:
       driver-class-name: com.mysql.jdbc.Driver
   batch:
     job:
-      names: batchJob1
+      names: ${job.name:NONE}
